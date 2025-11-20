@@ -42,8 +42,33 @@ While the `insert` operator only needs to check the parent node of the inserted 
 
 - **1c.**
 
+We already know the `insert` operation will be called $|E|$ times, for each edge, and the `delete` operation will be caled |V| times, for each node. This means the work of this algorithmn will be, based on previously calculated work of these operations:
+
+$W(n) \in O(|E|log_d(n)+|V|dlog_d(n))$
+
 - **1d.**
 
+A d value must be is
+
+$d=\frac{|E|}{|V|}$
+
+We can find this d value by doing the following
+
+$|E|log_d(|V|)+|V|dlog_d(|V|)=|E|$
+
+$|V|dlog_d(n)=|E|(1-log_d(n))$
+
+$\frac{|V|dlog_d(n)}{|E|}=1-log_d(n)$
+
+$\frac{|V|}{|E|}=\frac{1-log_d(n)}{dlog_d(n)}$
+
+$\frac{|V|}{|E|}=\frac{1-log_d(n)}{dlog_d(n)}$
+
+$\frac{|E|}{|V|}=d\frac{log_d(n)}{1-log_d(n)}$
+
+Then after removing log term we can estimate the needed d value:
+
+$d=\frac{|E|}{|V|}$
 
 - **2a.**
 
